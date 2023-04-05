@@ -27,14 +27,14 @@ if [ "$suimg" ]; then
       losetup -d $loop 2>/dev/null;
     fi;
   fi;
-  [ $mnt == /magisk ] && magisk=/nano-ndk/system;
+  [ $mnt == /magisk ] && magisk=/umbrella/system;
   [ -e $magisk/product ] && magisk=$magisk/product;
   etc=$mnt$magisk/etc;
   bin=$mnt$magisk/bin;
 else
   mnt=$(dirname `find /data -name supersu_is_here | head -n1`);
-  [ -e /data/adb/modules ] && mnt=/data/adb/modules/nano-ndk/system;
-  [ -e /data/adb/modules_update ] && mnt=/data/adb/modules_update/nano-ndk/system;
+  [ -e /data/adb/modules ] && mnt=/data/adb/modules/umbrella/system;
+  [ -e /data/adb/modules_update ] && mnt=/data/adb/modules_update/umbrella/system;
   if [ -e "$mnt" ]; then
     [ -e $mnt/product ] && mnt=$mnt/product;
     etc=$mnt/etc;
